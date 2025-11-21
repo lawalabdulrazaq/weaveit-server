@@ -9,7 +9,7 @@
     "dev": "node --loader ts-node/esm src/server.ts",
     "dev:watch": "tsx watch src/server.ts",
     "d": "node --loader ts-node/esm src/server.ts",
-    "start": "node dist/server.js",
+    "start": "ts-node-esm src/server.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build": "tsc",
@@ -58,7 +58,9 @@
     "pg": "^8.16.3",
     "react": "^19.1.0",
     "react-router-dom": "^7.6.2",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/commander": "^2.12.5",
@@ -72,7 +74,6 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.5",
     "tailwindcss": "^4.1.10",
-    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }

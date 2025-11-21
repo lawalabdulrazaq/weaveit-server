@@ -175,3 +175,33 @@ If you'd like I can also:
 - Create a sample HTML/JS frontend that uploads scripts and displays status/video.
 
 Tell me which of those you prefer and I will implement it.
+
+**Deploying to Heroku (notes)**
+
+Short guide to deploy this repo to Heroku:
+
+1. Create a Heroku app and set required environment variables:
+
+```bash
+heroku create your-app-name
+heroku config:set OPENAI_API_KEY=sk_...
+```
+
+2. Push to Heroku (main branch):
+
+```bash
+git push heroku main
+```
+
+3. Scale dynos to run the web and worker processes:
+
+```bash
+heroku ps:scale web=1 worker=1
+```
+
+Notes and caveats:
+- FFmpeg and native `canvas` libs are required by the video worker. Heroku dynos don't include FFmpeg by default, so either:
+  - Add a buildpack that provides FFmpeg and any system deps, or
+  - Use a container-based deploy (Docker) where you control the image, or
+  - Offload heavy processing to an external worker host that has FFmpeg installed.
+- The `Procfile` in this repo defines `web` process.
