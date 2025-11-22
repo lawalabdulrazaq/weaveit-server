@@ -1,8 +1,8 @@
 import express from 'express';
-import { enhanceScript } from '../src/codeAnalyzer';
-import { generateSpeechBuffer } from '../src/textToSpeech';
-import { generateScrollingScriptVideoBuffer } from '../src/videoGenerator';
-import { createVideoJob, updateJobStatus, storeVideo } from '../src/db';
+import { enhanceScript } from '../src/codeAnalyzer.js';
+import { generateSpeechBuffer } from '../src/textToSpeech.js';
+import { generateScrollingScriptVideoBuffer } from '../src/videoGenerator.js';
+import { createVideoJob, updateJobStatus, storeVideo } from '../src/db.js';
 const router = express.Router();
 // POST /api/generate
 const generateHandler = async (req, res) => {

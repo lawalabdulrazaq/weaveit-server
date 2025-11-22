@@ -1,5 +1,5 @@
 import express from 'express';
-import { getJobStatus, getVideo } from '../src/db';
+import { getJobStatus, getVideo } from '../src/db.js';
 const router = express.Router();
 // GET /api/videos/status/:id
 router.get('/videos/status/:id', async (req, res) => {

@@ -1,6 +1,6 @@
 // src/index.ts
-export { Config } from './config';
-export { analyzeCode } from './codeAnalyzer';
-export { generateSpeech } from './textToSpeech';
-export { generateVideo } from './videoGenerator';
+export { Config } from './config.js';
+export { analyzeCode } from './codeAnalyzer.js';
+export { generateSpeech } from './textToSpeech.js';
+export { generateVideo } from './videoGenerator.js';
 //# sourceMappingURL=index.js.map

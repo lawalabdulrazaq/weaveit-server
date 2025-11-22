@@ -2,10 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
-import videosStatusRoute from '../weaveit-generator/videosStatusRoute';
-import generateRoute from '../weaveit-generator/generateRoute';
-import generateAudioRoute from '../weaveit-generator/generateAudioRoute';
-import { testConnection, getVideoByJobId, getVideoByVideoId, getVideosByWallet, getAudioByJobId, getAudioByAudioId, getContentByWallet } from './db';
+import videosStatusRoute from '../weaveit-generator/videosStatusRoute.js';
+import generateRoute from '../weaveit-generator/generateRoute.js';
+import generateAudioRoute from '../weaveit-generator/generateAudioRoute.js';
+import { testConnection, getVideoByJobId, getVideoByVideoId, getVideosByWallet, getAudioByJobId, getAudioByAudioId, getContentByWallet } from './db.js';
 
 // Load environment variables from root .env file
 dotenv.config({ path: path.join(process.cwd(), '.env') });
