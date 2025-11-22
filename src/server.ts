@@ -11,7 +11,7 @@ import { testConnection, getVideoByJobId, getVideoByVideoId, getVideosByWallet, 
 dotenv.config({ path: path.join(process.cwd(), '.env') });
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -183,5 +183,5 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT} (bind=${process.env.PORT ? 'env' : 'default'})`);
 });
