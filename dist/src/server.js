@@ -9,7 +9,7 @@ import { testConnection, getVideoByJobId, getVideoByVideoId, getVideosByWallet, 
 // Load environment variables from root .env file
 dotenv.config({ path: path.join(process.cwd(), '.env') });
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
 app.use(cors());
 app.use(express.json());
 // Mount API routers under `/api` so frontend can call `/api/generate` and `/api/videos/status/:id`
@@ -161,6 +161,6 @@ app.use((req, res) => {
     res.status(404).json({ error: 'Not found' });
 });
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT} (bind=${process.env.PORT ? 'env' : 'default'})`);
 });
 //# sourceMappingURL=server.js.map
