@@ -9,7 +9,7 @@
     "dev": "node --loader ts-node/esm src/server.ts",
     "dev:watch": "tsx watch src/server.ts",
     "d": "node --loader ts-node/esm src/server.ts",
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
